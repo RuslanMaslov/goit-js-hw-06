@@ -8,10 +8,10 @@ function handleSubmit(event) {
         elements: { email, password },
     } = event.currentTarget
 
-    if (email.value === '' || password.value === '') {
+    if (!email.value.trim() || !password.value.trim()) {
         return alert('Please fill in all the fields!')
     }
-    const userDetails = { email: email.value, Password: password.value }
+    const userDetails = { email: email.value, password: password.value }
     
     console.log(userDetails)
     event.currentTarget.reset()
